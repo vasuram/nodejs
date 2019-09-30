@@ -1,0 +1,13 @@
+[Unit]
+Description= "Hello world Deamon"
+After=network.target
+
+[Service]
+Environment=NODE_PORT=3000
+Type=simple
+User=centos
+ExecStart=/usr/bin/node /home/centos/helloworld.js
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
